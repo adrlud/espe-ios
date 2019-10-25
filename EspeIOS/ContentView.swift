@@ -49,10 +49,11 @@ struct DeviceRowView: View {
                 }
                 
                 VStack(alignment: .leading) {
-                    Text(device.name).font(.custom("System", size: 30))
+                    Text(device.name).font(.custom("System", size: 18))
                     Text("144.202.14.56").font(.subheadline).fontWeight(.ultraLight)
                 }
             Spacer()
+            Image(systemName: "chevron.right")
             }
                 .padding(.all, 20)
         }
@@ -67,8 +68,9 @@ struct AddButton: View{
             print("Delete tapped!")
         }) {
             HStack {
-                Image(systemName: "plus.circle.fill").frame(width: 15)
-                    .font(.title)
+                Image(systemName: "plus.circle.fill")
+                    .font(.caption)
+                
                 Text("Lägg till enhet")
                     .fontWeight(.semibold)
                     .font(.caption)
