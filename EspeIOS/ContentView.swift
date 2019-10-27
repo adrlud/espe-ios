@@ -8,11 +8,13 @@
 
 import SwiftUI
 import UIKit
+import Combine
+
 
 struct ContentView: View {
-    @ObservedObject var networkManager = NetworkManagerDevices()
+    @EnvironmentObject var networkManager: NetworkManagerDevices
     
-    var testData: [Device] = [Device(name: "Max", id: 0), Device(name: "Adrian", id: 1)]
+    var testData: [Device] = [Device(name: "Max", id: 0, active: true, connected: false)]
     var body: some View {
     
         VStack() {
@@ -24,7 +26,7 @@ struct ContentView: View {
                         DeviceRowView(device: $0)
                     }
                     AddButton()
-                }.padding(.horizontal, 24)
+                }.padding(.horizontal, 8)
                 
             }
             
@@ -34,29 +36,30 @@ struct ContentView: View {
     }
 }
 
+
+
+
 struct DeviceRowView: View {
     let device: Device
+    @State var isExpanded = false
+    
     var body: some View {
-        
-        
         ZStack {
-            Rectangle().foregroundColor(.white).cornerRadius(15).shadow(radius: 10, x:3, y: 3)
-            HStack {
-                if device.id == 0{
-                    Circle().frame(width: 20).padding(.trailing, 10).foregroundColor(.green)
-                } else {
-                    Circle().frame(width: 20).padding(.trailing, 10).foregroundColor(.red)
+            Rectangle().foregroundColor(.white).cornerRadius(8).shadow(radius: 10, x:3, y: 3)
+            
+            VStack(alignment: .leading) {
+                DeviceRowHeader(device: device, isExpanded: isExpanded).onTapGesture {
+                    self.isExpanded.toggle()
                 }
-                
-                VStack(alignment: .leading) {
-                    Text(device.name).font(.custom("System", size: 18))
-                    Text("144.202.14.56").font(.subheadline).fontWeight(.ultraLight)
+                if isExpanded {
+                    DeviceRowBody(device: device, isExpanded: isExpanded)
                 }
-            Spacer()
-            Image(systemName: "chevron.right")
-            }
-                .padding(.all, 20)
+            }.padding([.top, .horizontal, .bottom], 20)
+           
+
+            
         }
+    
     }
 }
 
@@ -91,5 +94,90 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+
+
+
+struct DeviceRowHeader: View {
+    let device: Device
+    var  isExpanded = false
+    var body: some View {
+        HStack {
+            if device.id == 0{
+                Circle().frame(width: 20).padding(.trailing, 10).foregroundColor(.green)
+            } else {
+                Circle().frame(width: 20).padding(.trailing, 10).foregroundColor(.red)
+            }
+            
+            VStack(alignment: .leading) {
+                Text(device.name).font(.custom("System", size: 18))
+                Text("144.202.14.56").font(.subheadline).fontWeight(.ultraLight)
+            }
+            Spacer()
+            
+            if isExpanded {
+                Image(systemName: "chevron.down")
+            } else {
+                Image(systemName: "chevron.right")
+            }
+        }
+        
+    }
+}
+
+
+struct DeviceRowBody: View {
+    var device: Device
+    var isExpanded = false
+    @State var medicine = ""
+    @State var activeIngredient = ""
+    @State var deviceActivation = true
+    @EnvironmentObject var networkManager: NetworkManagerDevices
+    
+   
+    
+    var body: some View {
+        
+     
+        VStack {
+            
+            Toggle(isOn: $deviceActivation) {
+                Text("Active")
+            }
+            TextField("Medicine", text: $medicine)
+            TextField("Active ingredient", text: $medicine)
+        }
+
+
+    }
+    
+     func sendSettings(){
+        NetworkManagerUpload().updateDeviceActiveStatus(device_id: self.device.id, active: deviceActivation)
+        
+        
+    }
+
+}
+
+
+
+struct RoundedButton : View {
+    var body: some View {
+        Button(action: {}) {
+
+            HStack {
+                Spacer()
+                Text("Save")
+                    .font(.headline)
+                    .foregroundColor(Color.white)
+                Spacer()
+            }
+        }
+        .padding(.vertical, 10.0)
+        .background(Color.red)
+        .cornerRadius(15)
+        .padding(.horizontal, 50)
+    }
+
+}
 
 

@@ -11,9 +11,3 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class HostingController: UIHostingController<AppView> {
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        
-        return .darkContent
-    }
-}

@@ -10,8 +10,14 @@ import Foundation
 
 
 struct Device: Decodable, Identifiable {
-    let name: String
-    let id: Int
+    var name: String
+    var id: Int
+    var active: Bool
+    var connected: Bool
+}
+
+class UserDevices: ObservableObject {
+    @Published var score = 0
 }
 
 

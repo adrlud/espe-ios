@@ -9,15 +9,10 @@
 import SwiftUI
 
 struct AppView: View {
+    @EnvironmentObject var settings: UserDevices
+    
     var body: some View {
-       /* NavigationView{
-            
-            EventView()
-            ContentView()
-        
-                
-            }*/
-       
+
         ZStack{
            Color(#colorLiteral(red: 0.6509822011, green: 0.8906581998, blue: 0.9126955271, alpha: 1)).edgesIgnoringSafeArea(.all)
             TabView{
@@ -44,6 +39,6 @@ struct AppView: View {
 
 struct AppView_Previews: PreviewProvider {
     static var previews: some View {
-        AppView()
+        AppView().environmentObject(UserDevices())
     }
 }
