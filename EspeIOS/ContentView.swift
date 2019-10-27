@@ -14,7 +14,7 @@ import Combine
 struct ContentView: View {
     @EnvironmentObject var networkManager: NetworkManagerDevices
     
-    var testData: [Device] = [Device(name: "Max", id: 0, active: true, connected: false)]
+    //var testData: [Device] = [Device(name: "Max", id: 0, active: true, connected: false)]
     var body: some View {
     
         VStack() {
@@ -40,11 +40,12 @@ struct ContentView: View {
 
 
 struct DeviceRowView: View {
-    let device: Device
+    var device: Device
     @State var isExpanded = false
-    
+   
+    @EnvironmentObject var net: NetworkManagerDevices
     var body: some View {
-        ZStack {
+        return ZStack {
             Rectangle().foregroundColor(.white).cornerRadius(8).shadow(radius: 10, x:3, y: 3)
             
             VStack(alignment: .leading) {
@@ -55,13 +56,12 @@ struct DeviceRowView: View {
                     DeviceRowBody(device: device, isExpanded: isExpanded)
                 }
             }.padding([.top, .horizontal, .bottom], 20)
-           
-
-            
-        }
     
+        }
     }
+    
 }
+
 
 
 struct AddButton: View{
@@ -98,11 +98,15 @@ struct ContentView_Previews: PreviewProvider {
 
 
 struct DeviceRowHeader: View {
-    let device: Device
+    var device: Device
     var  isExpanded = false
+    
+    @EnvironmentObject var networkManager: NetworkManagerDevices
+    
+    
     var body: some View {
         HStack {
-            if device.id == 0{
+            if device.active == true {
                 Circle().frame(width: 20).padding(.trailing, 10).foregroundColor(.green)
             } else {
                 Circle().frame(width: 20).padding(.trailing, 10).foregroundColor(.red)
@@ -120,7 +124,6 @@ struct DeviceRowHeader: View {
                 Image(systemName: "chevron.right")
             }
         }
-        
     }
 }
 
@@ -130,30 +133,28 @@ struct DeviceRowBody: View {
     var isExpanded = false
     @State var medicine = ""
     @State var activeIngredient = ""
-    @State var deviceActivation = true
     @EnvironmentObject var networkManager: NetworkManagerDevices
     
-   
-    
+
     var body: some View {
         
-     
-        VStack {
-            
-            Toggle(isOn: $deviceActivation) {
+        let firstBinding = Binding( get: { self.device.active }, set: {
+            self.device.active = $0
+            self.sendSettings()
+            self.networkManager.change.toggle()
+    
+     } )
+       return VStack {
+            Toggle(isOn: firstBinding) {
                 Text("Active")
             }
             TextField("Medicine", text: $medicine)
             TextField("Active ingredient", text: $medicine)
         }
-
-
     }
-    
-     func sendSettings(){
-        NetworkManagerUpload().updateDeviceActiveStatus(device_id: self.device.id, active: deviceActivation)
-        
-        
+     
+    func sendSettings(){
+        NetworkManagerUpload().updateDeviceActiveStatus(device_id: self.device.id, active: self.device.active)
     }
 
 }

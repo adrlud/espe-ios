@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct Device: Decodable, Identifiable {
+class Device: Decodable, Identifiable, ObservableObject {
     var name: String
     var id: Int
     var active: Bool
@@ -27,7 +27,7 @@ struct Api: Decodable{
 }
 
 
-struct Event: Decodable {
+struct Event: Decodable, Identifiable {
     let id: Int
     let datetime: String
     let count: Int

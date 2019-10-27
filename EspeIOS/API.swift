@@ -11,11 +11,22 @@ import Combine
 import SwiftUI
 
 class NetworkManagerDevices: ObservableObject {
+    
     var didChange = PassthroughSubject<NetworkManagerDevices, Never>()
     
+    
+    
     @Published var devices = [Device]() {
-        didSet {_devicesDidChange.send(devices)}
+        didSet {}
     }
+    
+     @Published var change: Bool = false {
+        didSet {
+            _devicesDidChange.send(devices)
+            
+        }
+    }
+    
     
     private let _devicesDidChange = PassthroughSubject<[Device], Never>()
     
@@ -38,6 +49,7 @@ class NetworkManagerDevices: ObservableObject {
 
 class NetworkManagerEvents: ObservableObject {
     var didChange = PassthroughSubject<NetworkManagerEvents, Never>()
+    
     @Published var event = [Event]()
 
     init(){
