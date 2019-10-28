@@ -13,9 +13,7 @@ import Combine
 
 struct ContentView: View {
     @EnvironmentObject var networkManager: NetworkManagerDevices
-    
-    //var testData: [Device] = [Device(name: "Max", id: 0, active: true, connected: false)]
-    var body: some View {
+        var body: some View {
     
         VStack() {
             ScrollView(.vertical){
@@ -68,7 +66,7 @@ struct AddButton: View{
     var body: some View{
    
         Button(action: {
-            print("Delete tapped!")
+            print("Add new Device!")
         }) {
             HStack {
                 Image(systemName: "plus.circle.fill")
@@ -106,23 +104,25 @@ struct DeviceRowHeader: View {
     
     var body: some View {
         HStack {
+            
+            if isExpanded {
+                Image(systemName: "chevron.down").frame(width: 12, height: 12).fixedSize(horizontal: true, vertical: true)
+            } else {
+                Image(systemName: "chevron.right").fixedSize().frame(width: 12, height: 12).fixedSize(horizontal: true, vertical: true)
+            }
+          
+            VStack(alignment: .leading) {
+                Text(device.name).font(.custom("System", size: 18))
+            }.padding(.horizontal, 10)
+   
+            Spacer()
+            
             if device.active == true {
                 Circle().frame(width: 20).padding(.trailing, 10).foregroundColor(.green)
             } else {
                 Circle().frame(width: 20).padding(.trailing, 10).foregroundColor(.red)
             }
             
-            VStack(alignment: .leading) {
-                Text(device.name).font(.custom("System", size: 18))
-                Text("144.202.14.56").font(.subheadline).fontWeight(.ultraLight)
-            }
-            Spacer()
-            
-            if isExpanded {
-                Image(systemName: "chevron.down")
-            } else {
-                Image(systemName: "chevron.right")
-            }
         }
     }
 }
@@ -149,7 +149,7 @@ struct DeviceRowBody: View {
                 Text("Active")
             }
             TextField("Medicine", text: $medicine)
-            TextField("Active ingredient", text: $medicine)
+        TextField("Active ingredient", text: $activeIngredient)
         }
     }
      
