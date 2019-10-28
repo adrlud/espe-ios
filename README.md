@@ -9,3 +9,4 @@ Currently in development
   <img src="EspeIOS/Assets.xcassets/ScreenshotDevices.imageset/ScreenshotDevices.png" width="180">
 </p>
 
+Built upon Apples new SwiftUI framework, thus the ui is a bit lacking. One does not simply walk into <strike>mordor</strike> SwiftUI
