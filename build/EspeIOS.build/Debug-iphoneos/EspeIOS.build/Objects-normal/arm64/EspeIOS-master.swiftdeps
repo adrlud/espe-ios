@@ -1,0 +1,12 @@
+version: "Apple Swift version 5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)"
+options: "dc002a0bccee688754380efcdbbf04f0"
+build_time: [1572289277, 280910000]
+inputs:
+  "/Users/Adrian/Documents/Programmering/Espe-frontend/EspeIOS/EspeIOS/Extensions.swift": [1572026591, 989528933]
+  "/Users/Adrian/Documents/Programmering/Espe-frontend/EspeIOS/EspeIOS/SceneDelegate.swift": [1572210514, 442445832]
+  "/Users/Adrian/Documents/Programmering/Espe-frontend/EspeIOS/EspeIOS/AppView.swift": [1572179173, 194910046]
+  "/Users/Adrian/Documents/Programmering/Espe-frontend/EspeIOS/EspeIOS/API.swift": [1572210514, 408222352]
+  "/Users/Adrian/Documents/Programmering/Espe-frontend/EspeIOS/EspeIOS/ContentView.swift": [1572281224, 935275362]
+  "/Users/Adrian/Documents/Programmering/Espe-frontend/EspeIOS/EspeIOS/Models.swift": [1572211200, 234983890]
+  "/Users/Adrian/Documents/Programmering/Espe-frontend/EspeIOS/EspeIOS/AppDelegate.swift": [1572007802, 219880147]
+  "/Users/Adrian/Documents/Programmering/Espe-frontend/EspeIOS/EspeIOS/EventView.swift": [1572212395, 538168023]

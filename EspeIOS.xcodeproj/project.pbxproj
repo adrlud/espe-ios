@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A1D8E4F23622C6F00D7C0F2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1D8E4E23622C6F00D7C0F2 /* Default-568h@2x.png */; };
 		3A1D8E752362397900D7C0F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D8E742362397900D7C0F2 /* AppDelegate.swift */; };
+		3A3E5BB5236782AD00BC2AF1 /* EspeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3E5BB4236782AD00BC2AF1 /* EspeTests.swift */; };
 		3A5AD2812352479A0089703E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AD2802352479A0089703E /* SceneDelegate.swift */; };
 		3A5AD2832352479A0089703E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AD2822352479A0089703E /* ContentView.swift */; };
 		3A5AD285235247A10089703E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A5AD284235247A10089703E /* Assets.xcassets */; };
@@ -21,10 +22,23 @@
 		3A5AD29B235375850089703E /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AD29A235375850089703E /* EventView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3A3E5BB7236782AD00BC2AF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A5AD2732352479A0089703E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A5AD27A2352479A0089703E;
+			remoteInfo = EspeIOS;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		3A0B7D8D2362F6FE00154962 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/Info.plist"; sourceTree = "<group>"; };
 		3A1D8E4E23622C6F00D7C0F2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3A1D8E742362397900D7C0F2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3A3E5BB2236782AD00BC2AF1 /* EspeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EspeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A3E5BB4236782AD00BC2AF1 /* EspeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EspeTests.swift; sourceTree = "<group>"; };
+		3A3E5BB6236782AD00BC2AF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A5AD27B2352479A0089703E /* Espe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Espe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A5AD2802352479A0089703E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3A5AD2822352479A0089703E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +53,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3A3E5BAF236782AD00BC2AF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A5AD2782352479A0089703E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -49,11 +70,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A3E5BB3236782AD00BC2AF1 /* EspeTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A3E5BB4236782AD00BC2AF1 /* EspeTests.swift */,
+				3A3E5BB6236782AD00BC2AF1 /* Info.plist */,
+			);
+			path = EspeTests;
+			sourceTree = "<group>";
+		};
 		3A5AD2722352479A0089703E = {
 			isa = PBXGroup;
 			children = (
 				3A1D8E4E23622C6F00D7C0F2 /* Default-568h@2x.png */,
 				3A5AD27D2352479A0089703E /* EspeIOS */,
+				3A3E5BB3236782AD00BC2AF1 /* EspeTests */,
 				3A5AD27C2352479A0089703E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				3A5AD27B2352479A0089703E /* Espe.app */,
+				3A3E5BB2236782AD00BC2AF1 /* EspeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +128,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3A3E5BB1236782AD00BC2AF1 /* EspeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A3E5BB9236782AD00BC2AF1 /* Build configuration list for PBXNativeTarget "EspeTests" */;
+			buildPhases = (
+				3A3E5BAE236782AD00BC2AF1 /* Sources */,
+				3A3E5BAF236782AD00BC2AF1 /* Frameworks */,
+				3A3E5BB0236782AD00BC2AF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A3E5BB8236782AD00BC2AF1 /* PBXTargetDependency */,
+			);
+			name = EspeTests;
+			productName = EspeTests;
+			productReference = 3A3E5BB2236782AD00BC2AF1 /* EspeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3A5AD27A2352479A0089703E /* EspeIOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A5AD28F235247A10089703E /* Build configuration list for PBXNativeTarget "EspeIOS" */;
@@ -128,6 +178,10 @@
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Adrian Ludvigsson";
 				TargetAttributes = {
+					3A3E5BB1236782AD00BC2AF1 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 3A5AD27A2352479A0089703E;
+					};
 					3A5AD27A2352479A0089703E = {
 						CreatedOnToolsVersion = 11.1;
 					};
@@ -149,11 +203,19 @@
 			projectRoot = "";
 			targets = (
 				3A5AD27A2352479A0089703E /* EspeIOS */,
+				3A3E5BB1236782AD00BC2AF1 /* EspeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3A3E5BB0236782AD00BC2AF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A5AD2792352479A0089703E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -168,6 +230,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3A3E5BAE236782AD00BC2AF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A3E5BB5236782AD00BC2AF1 /* EspeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A5AD2772352479A0089703E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -185,6 +255,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3A3E5BB8236782AD00BC2AF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A5AD27A2352479A0089703E /* EspeIOS */;
+			targetProxy = 3A3E5BB7236782AD00BC2AF1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		3A5AD289235247A10089703E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -197,6 +275,47 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3A3E5BBA236782AD00BC2AF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7V3PVG8X4Y;
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = EspeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adrianludvigsson.EspeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Espe.app/Espe";
+			};
+			name = Debug;
+		};
+		3A3E5BBB236782AD00BC2AF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7V3PVG8X4Y;
+				INFOPLIST_FILE = EspeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adrianludvigsson.EspeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Espe.app/Espe";
+			};
+			name = Release;
+		};
 		3A5AD28D235247A10089703E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -377,6 +496,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3A3E5BB9236782AD00BC2AF1 /* Build configuration list for PBXNativeTarget "EspeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A3E5BBA236782AD00BC2AF1 /* Debug */,
+				3A3E5BBB236782AD00BC2AF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		3A5AD2762352479A0089703E /* Build configuration list for PBXProject "EspeIOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
