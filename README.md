@@ -5,6 +5,7 @@ App for tracking medicine intake. The Iot device measure the weight of a tablett
 The server does a little bit of math and returns intake time and number of tablett taken to the app.
 
 <p align="center">
-  <img src="EspeIOS/Assets.xcassets/ScreenshotDevices.imageset/ScreenshotDevices.png" width="200">
+  <img src="EspeIOS/Assets.xcassets/ScreenshotDevices.imageset/ScreenshotDevices.png" width="180">
+  <img src="EspeIOS/Assets.xcassets/screenshotMain.imageset/screenshotMain.png" width="180">
 </p>
 
